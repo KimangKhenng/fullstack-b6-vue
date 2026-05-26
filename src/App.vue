@@ -1,34 +1,34 @@
 <template>
-  <todo-item v-for="todo in todos" :key="todo.id" :todo="todo" @toggle-complete="handleToggle"
-    @delete-todo="handleDelete" @edit-todo="handleEdit" />
-</template>
-<script>
-import TodoItem from '@/components/TodoItem.vue';
+  <div class="min-h-screen flex flex-col p-4 md:p-8 selection:bg-pink-300 selection:text-black">
+    <nav-header />
 
+    <router-view />
+
+    <site-footer />
+  </div>
+</template>
+
+<script>
+import NavHeader from '@/components/NavHeader.vue';
+import HeroSection from '@/components/HeroSection.vue';
+import TodoCard from '@/components/TodoCard.vue';
+import GenericColorCard from '@/components/GenericColorCard.vue';
+import SiteFooter from '@/components/SiteFooter.vue';
 export default {
   components: {
-    TodoItem
+    NavHeader,
+    HeroSection,
+    TodoCard,
+    GenericColorCard,
+    SiteFooter
   },
   data() {
     return {
-      todos: [
-        { id: 1, text: "Learn Vue", completed: false },
-        { id: 2, text: "Build project", completed: false },
-      ],
+      features: [
+        { title: 'Fast', description: 'No loading screens, just pure 1990s performance.' },
+        { title: 'Simple', description: 'No complicated features you\'ll never actually use.' },
+        { title: 'Stylish', description: 'Aesthetic that takes you back in time.' }]
     };
-  },
-  methods: {
-    handleToggle(todoId) {
-      const todo = this.todos.find((t) => t.id === todoId);
-      if (todo) todo.completed = !todo.completed;
-    },
-    handleDelete(todoId) {
-      this.todos = this.todos.filter((t) => t.id !== todoId);
-    },
-    handleEdit(todoId, newText) {
-      const todo = this.todos.find((t) => t.id === todoId);
-      if (todo) todo.text = newText;
-    },
   },
 };
 </script>

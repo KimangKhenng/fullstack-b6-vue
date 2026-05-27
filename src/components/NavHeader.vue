@@ -8,8 +8,8 @@
 
         <!-- NAVIGATION: Repetitive elements, perfect for `v-for` -->
         <nav class="flex gap-4 font-bold text-sm sm:text-base">
-            <router-link to="/"
-                class="border-2 border-transparent hover:border-black px-2 py-1 transition-colors">Home</router-link>
+            <router-link to="/" class="border-2 border-transparent hover:border-black px-2 py-1 transition-colors">Home
+            </router-link>
             <router-link to="/about"
                 class="border-2 border-transparent hover:border-black px-2 py-1 transition-colors">About</router-link>
             <router-link to="/features"
@@ -22,6 +22,7 @@
     </header>
 </template>
 <script>
+
 export default {
     methods: {
         goBackHome() {

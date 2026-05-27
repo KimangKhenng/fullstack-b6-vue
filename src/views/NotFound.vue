@@ -42,10 +42,10 @@
                 </p>
 
                 <div class="pt-6">
-                    <a href="index.html"
+                    <router-link to="/"
                         class="inline-block border-4 border-black bg-yellow-300 hover:bg-yellow-400 text-black px-8 py-4 font-bold uppercase retro-shadow-sm active:translate-y-1 active:shadow-none transition-all text-xl">
                         ← Go Back Home
-                    </a>
+                    </router-link>
                 </div>
             </div>
         </section>

@@ -3,10 +3,10 @@
 
     <main class="flex-grow flex flex-col items-center w-full max-w-4xl mx-auto">
         <div class="w-full flex justify-start mb-6">
-            <router-link to="/users"
+            <a href="users.html"
                 class="border-4 border-black bg-white hover:bg-gray-100 px-4 py-2 font-bold uppercase retro-shadow-sm transition-all active:translate-y-1 active:shadow-none">
                 ← Back to Users
-            </router-link>
+            </a>
         </div>
 
         <!-- USER PROFILE CARD (Dynamic route target: /users/:id) -->
@@ -67,12 +67,75 @@
                 </div>
             </div>
         </section>
+
+        <div class="w-full mt-6 border-4 border-black bg-white retro-shadow">
+            <div class="flex border-b-4 border-black overflow-x-auto">
+                <router-link :to="`/users/${$route.params.id}`"
+                    class="tab-link px-6 py-3 font-bold uppercase text-sm border-r-4 border-black hover:bg-yellow-100 transition-colors whitespace-nowrap">
+                    Posts
+                </router-link>
+                <router-link :to="`/users/${$route.params.id}/followers`"
+                    class="tab-link px-6 py-3 font-bold uppercase text-sm border-r-4 border-black hover:bg-yellow-100 transition-colors whitespace-nowrap">
+                    Followers
+                </router-link>
+                <router-link :to="`/users/${$route.params.id}/followings`"
+                    class="tab-link px-6 py-3 font-bold uppercase text-sm hover:bg-yellow-100 transition-colors whitespace-nowrap">
+                    Following
+                </router-link>
+            </div>
+
+            <div id="child-route-view" class="p-6 min-h-48">
+                <router-view />
+            </div>
+            <!-- end #child-route-view -->
+        </div>
+
+        <!-- STUDENT CALLOUT BOX -->
+        <div class="w-full mt-6 border-4 border-black bg-yellow-200 retro-shadow p-5">
+            <p class="font-bold uppercase text-sm mb-2">
+                ✏ Your Turn — Implement Nested Routes
+            </p>
+            <ol class="list-decimal list-inside text-sm space-y-1 font-mono">
+                <li>
+                    Create
+                    <span class="bg-white border border-black px-1">views/UserProfile.vue</span>
+                    with a
+                    <span class="bg-white border border-black px-1">&lt;router-view /&gt;</span>
+                    inside it.
+                </li>
+                <li>
+                    Add
+                    <span class="bg-white border border-black px-1">children:</span> in
+                    your router config for
+                    <span class="bg-white border border-black px-1">/users/:id</span>.
+                </li>
+                <li>
+                    Create
+                    <span class="bg-white border border-black px-1">UserPosts.vue</span>,
+                    <span class="bg-white border border-black px-1">UserFollowers.vue</span>,
+                    <span class="bg-white border border-black px-1">UserFollowing.vue</span>.
+                </li>
+                <li>
+                    Use
+                    <span class="bg-white border border-black px-1">&lt;RouterLink&gt;</span>
+                    for the tabs (check active state with
+                    <span class="bg-white border border-black px-1">router-link-active</span>).
+                </li>
+                <li>
+                    Bonus: redirect
+                    <span class="bg-white border border-black px-1">/users/:id</span> →
+                    <span class="bg-white border border-black px-1">/users/:id/posts</span>
+                    by default.
+                </li>
+            </ol>
+        </div>
     </main>
 </template>
 <script>
 export default {
     created() {
         console.log(this.$route.params.id)
+
     }
 }
 </script>

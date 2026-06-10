@@ -1,14 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import AboutView from '@/views/AboutView.vue'
-import Contact from '@/views/Contact.vue'
-import FeaturesView from '@/views/FeaturesView.vue'
-import UsersView from '@/views/users/UsersView.vue'
-import UserView from '@/views/users/UserView.vue'
-import NotFound from '@/views/NotFound.vue'
-import UserPosts from '@/views/users/UserPosts.vue'
-import UserFollowers from '@/views/users/UserFollowers.vue'
-import UserFollowing from '@/views/users/UserFollowing.vue'
+// import HomeView from '@/views/HomeView.vue'
+// import AboutView from '@/views/AboutView.vue'
+// import Contact from '@/views/Contact.vue'
+// import FeaturesView from '@/views/FeaturesView.vue'
+// import UsersView from '@/views/users/UsersView.vue'
+// import UserView from '@/views/users/UserView.vue'
+// import NotFound from '@/views/NotFound.vue'
+// import UserPosts from '@/views/users/UserPosts.vue'
+// import UserFollowers from '@/views/users/UserFollowers.vue'
+// import UserFollowing from '@/views/users/UserFollowing.vue'
+
+const HomeView = () => import('@/views/HomeView.vue')
+const AboutView = () => import('@/views/AboutView.vue')
+const Contact = () => import('@/views/Contact.vue')
+const FeaturesView = () => import('@/views/FeaturesView.vue')
+const UsersView = () => import('@/views/users/UsersView.vue')
+const UserView = () => import('@/views/users/UserView.vue')
+const NotFound = () => import('@/views/NotFound.vue')
+const UserPosts = () => import('@/views/users/UserPosts.vue')
+const UserFollowers = () => import('@/views/users/UserFollowers.vue')
+const UserFollowing = () => import('@/views/users/UserFollowing.vue')
 
 const router = createRouter({
     history: createWebHistory(),

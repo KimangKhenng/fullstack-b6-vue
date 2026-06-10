@@ -9,7 +9,7 @@
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 uppercase leading-tight relative z-10">
                     Packed with
                     <span
-                        class="bg-yellow-300 text-black px-2 py-1 border-2 border-black inline-block retro-shadow-sm">nothing!</span>
+                        class="bg-blue-300 text-black px-2 py-1 border-2 border-black inline-block retro-shadow-sm">nothing!</span>
                 </h2>
                 <p class="text-lg font-bold relative z-10">
                     All the features you need, and exactly ZERO you

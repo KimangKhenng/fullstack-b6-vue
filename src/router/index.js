@@ -98,7 +98,8 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     // Set page title from route meta
-    document.title = 'Note App | ' + to.meta.title
+    // document.title = 'Note App | ' + to.meta.title
+    document.title = ` ${import.meta.env.VITE_SITENAME} | ${to.meta.title}`
     next()
 })
 

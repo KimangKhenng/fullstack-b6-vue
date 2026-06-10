@@ -4,7 +4,7 @@
         <p class="text-sm">{{ description }}</p>
     </div>
 </template>
-<script>
+<!-- <script>
 export default {
     props: {
         title: {
@@ -17,4 +17,17 @@ export default {
         }
     }
 }
+</script> -->
+
+<script setup>
+const props = defineProps({
+    title: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    }
+})
 </script>

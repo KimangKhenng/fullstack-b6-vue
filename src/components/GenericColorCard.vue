@@ -4,7 +4,7 @@
         <slot></slot>
     </div>
 </template>
-<script>
+<!-- <script>
 export default {
     name: 'GenericColorCard',
     props: {
@@ -14,4 +14,13 @@ export default {
         },
     }
 }
+</script> -->
+
+<script setup>
+const props = defineProps({
+    color: {
+        type: String,
+        default: 'bg-yellow-300'
+    },
+})
 </script>

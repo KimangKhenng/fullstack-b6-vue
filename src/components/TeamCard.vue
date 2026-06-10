@@ -10,7 +10,7 @@
         </div>
     </div>
 </template>
-<script>
+<!-- <script>
 export default {
     props: {
         name: {
@@ -28,4 +28,22 @@ export default {
         }
     }
 }
+</script> -->
+
+<script setup>
+import { computed } from 'vue';
+
+const props = defineProps({
+    name: {
+        type: String,
+        default: 'Alice'
+    },
+    position: {
+        type: String,
+        default: 'Officer'
+    }
+})
+
+const firstLetter = computed(() => props.name.charAt(0).toUpperCase())
+
 </script>

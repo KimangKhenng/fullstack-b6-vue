@@ -19,7 +19,7 @@
         </div>
     </section>
 </template>
-<script>
+<!-- <script>
 import FeatureList from '@/components/FeatureList.vue';
 import GenericColorCard from '@/components/GenericColorCard.vue';
 export default {
@@ -35,4 +35,16 @@ export default {
         }
     }
 }
+</script> -->
+
+<script setup>
+import FeatureList from '@/components/FeatureList.vue';
+import GenericColorCard from '@/components/GenericColorCard.vue';
+
+const props = defineProps({
+    features: {
+        type: Array,
+        required: true
+    }
+})
 </script>

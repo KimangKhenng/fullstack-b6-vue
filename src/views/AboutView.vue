@@ -47,7 +47,7 @@
         </section>
     </main>
 </template>
-<script>
+<!-- <script>
 import GenericColorCard from '@/components/GenericColorCard.vue';
 import TeamCard from '@/components/TeamCard.vue';
 export default {
@@ -66,4 +66,19 @@ export default {
         };
     },
 }
+</script> -->
+
+<script setup>
+import GenericColorCard from '@/components/GenericColorCard.vue';
+import TeamCard from '@/components/TeamCard.vue';
+
+import { reactive } from 'vue';
+
+const teamMembers = reactive([
+    { name: 'Alice', position: 'Chief Nostalgia Officer' },
+    { name: 'Bob', position: 'Border Radius Hater' },
+    { name: 'Charlie', position: 'Pixel Perfectionist' },
+    { name: 'Diana', position: 'Shadow Specialist' }
+])
+
 </script>

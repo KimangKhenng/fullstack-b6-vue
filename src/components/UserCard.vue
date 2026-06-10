@@ -20,7 +20,7 @@
         </div>
     </div>
 </template>
-<script>
+<!-- <script>
 export default {
     props: {
         user: {
@@ -41,4 +41,23 @@ export default {
         }
     }
 }
+</script> -->
+<script setup>
+import { computed } from 'vue';
+
+const props = defineProps({
+    user: {
+        type: Object,
+        default: () => {
+            return {
+                id: '1',
+                username: 'alice_retro',
+                name: 'Alice',
+                bio: 'Loves border-radius: 0. Hates soft gradients.'
+            }
+        }
+    }
+})
+const firstLetter = computed(() => props.user.name.charAt(0).toUpperCase())
+
 </script>

@@ -21,7 +21,7 @@
     </main>
 </template>
 
-<script>
+<!-- <script>
 import HeroSection from '@/components/HeroSection.vue';
 import TodoCard from '@/components/TodoCard.vue';
 import GenericColorCard from '@/components/GenericColorCard.vue';
@@ -40,4 +40,17 @@ export default {
         };
     },
 };
+</script> -->
+
+<script setup>
+import HeroSection from '@/components/HeroSection.vue';
+import TodoCard from '@/components/TodoCard.vue';
+import GenericColorCard from '@/components/GenericColorCard.vue';
+import { reactive } from 'vue';
+
+const features = reactive([
+    { title: 'Fast', description: 'No loading screens, just pure 1990s performance.' },
+    { title: 'Simple', description: 'No complicated features you\'ll never actually use.' },
+    { title: 'Stylish', description: 'Aesthetic that takes you back in times.' }])
+    
 </script>
